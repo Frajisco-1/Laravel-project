@@ -30,9 +30,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('pegawais', PegawaiController::class);
     Route::resource('pekerjaans', PekerjaanController::class);
         
     Route::group(['middleware' => ['role:Admin']], function () {

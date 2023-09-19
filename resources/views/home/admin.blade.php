@@ -49,7 +49,7 @@
                    
                     <li><a class="nav-link"  href="{{ route('users.index') }}">Manage Users</a></li>
 
-                    <<li><a class="nav-link"  href="{{ route('laporans.index') }}">Manage Laporan User</a></li>
+                    <li><a class="nav-link"  href="{{ route('laporans.index') }}">Manage Laporan User</a></li>
                     
 
           </ul>

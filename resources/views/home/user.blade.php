@@ -49,7 +49,7 @@
                     <ul class="navbar-nav ms-auto">
 
                    
-                    <<li><a class="nav-link" href="{{ route('pekerjaans.index') }}">Pekerjaan</a></li>
+                    <li><a class="nav-link" href="{{ route('pekerjaans.index') }}">Pekerjaan</a></li>
 
           </ul>
        </div>

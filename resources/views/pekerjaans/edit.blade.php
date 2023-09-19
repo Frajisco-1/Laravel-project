@@ -38,7 +38,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tanggal </strong>
-                    <input type="text" name="tanggal" id="datatanggal_input" value="{{ $pekerjaan->tanggal }}" class="form-control" placeholder="Tanggal">
+                    <input type="text" name="tanggal" id="datatanggal_input" value="{{ date('d-m-Y', strtotime($pekerjaan->tanggal)) }}" class="form-control" placeholder="Tanggal">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -67,10 +67,9 @@
 
     </form>
     <script>
-        $( function() {
-          $( "#datatanggal_input" ).datepicker({
-            dateFormat: "yy-mm-dd"
-          });
-        } );
-        </script>
+       jQuery("#datatanggal_input").datepicker({
+            dateFormat: "dd-mm-yy"
+        });
+</script>
 @endsection
+

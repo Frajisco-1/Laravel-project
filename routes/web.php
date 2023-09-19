@@ -8,6 +8,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PekerjaanController;
+use App\Http\Controllers\LaporanController;
+
 
 
 /*
@@ -41,4 +43,5 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('profile', [UserController::class, 'profile'])->name('users.profile');
     Route::post('profile', [UserController::class, 'profileUpdate'])->name('users.profileUpdate');
+    Route::get('laporans', [LaporanController::class, 'index'])->name('laporans.index');
 });

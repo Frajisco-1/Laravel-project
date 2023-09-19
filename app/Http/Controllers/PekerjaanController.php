@@ -62,7 +62,7 @@ class PekerjaanController extends Controller
             $image->move($destinationPath, $pekerjaanImage);
             $input['image'] = $pekerjaanImage;
         }
-
+        $input['tanggal'] = date('Y-m-d', strtotime($input['tanggal']));
         $input['user_id'] = Auth::user()->id;
         Pekerjaan::create($input);
 
@@ -83,7 +83,7 @@ class PekerjaanController extends Controller
         $pekerjaan = Pekerjaan::query()
             ->with(['user'])
             ->find($id);
-        $data_tanggal = Carbon::parse($pekerjaan->tanggal)->format('m/d/Y');
+        $data_tanggal = Carbon::parse($pekerjaan->tanggal)->format('d/m/Y');
         $data_user = User::all();
         return view('pekerjaans.edit', compact('pekerjaan', 'data_user','data_tanggal'));
     }
@@ -110,7 +110,7 @@ class PekerjaanController extends Controller
         } else {
             unset($input['image']);
         }
-
+        $input['tanggal'] = date('Y-m-d', strtotime($input['tanggal']));
         $pekerjaan->update($input);
 
         return redirect()->route('pekerjaans.index')

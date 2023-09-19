@@ -25,7 +25,7 @@
             <th scope="col"><span style="color: #000000">Tanggal</span></th>
             <th scope="col"><span style="color: #000000">Nama User</span></th>
             <th scope="col"><span style="color: #000000">Date Created</span></th>
-            <th width="280px">Action</th>
+        
 </thead>
         </tr>
         
@@ -35,11 +35,11 @@
         @foreach ($laporans as $laporan)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td><img src="{{asset('image/' .$pekerjaan->image) }}" width="100px"></td>
+                <td>{{$laporan->name}}<img src="{{asset('image/' .$laporan->image) }}" width="100px"></td>
                 <td>{{ $laporan->detail_pekerjaan }}</td>
-                <td>{{ date('d/m/Y', strtotime($pekerjaan->tanggal)) }}</td>
-                <td>{{ $pekerjaan->user->name }}</td>
-                <td>{{ date_format($pekerjaan->created_at, 'd/m/Y') }}</td>
+                <td>{{ date('d/m/Y', strtotime($laporan->tanggal)) }}</td>
+                <td>{{ $laporan->user->name }}</td>
+                <td>{{ date_format($laporan->created_at, 'd/m/Y') }}</td>
                 <td>
                                                         
                     

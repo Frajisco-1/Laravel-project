@@ -34,7 +34,7 @@
         @endphp
         @foreach ($laporans as $laporan)
             <tr>
-                <td>{{$loop}}{{ $no++ }}</td>
+                <td>{{ $no++ }}</td>
                 <td><img src="{{asset('image/' .$pekerjaan->image) }}" width="100px"></td>
                 <td>{{ $laporan->detail_pekerjaan }}</td>
                 <td>{{ date('d/m/Y', strtotime($pekerjaan->tanggal)) }}</td>

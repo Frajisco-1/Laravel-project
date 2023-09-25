@@ -38,7 +38,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tanggal </strong>
+                    <div class="input-group mb-3">
                     <input type="text" name="tanggal" id="datatanggal_input" value="{{ date('d-m-Y', strtotime($pekerjaan->tanggal)) }}" class="form-control" placeholder="Tanggal">
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="fa-regular fa-calendar"></i>
+                       </span>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

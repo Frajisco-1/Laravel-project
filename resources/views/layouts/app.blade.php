@@ -18,13 +18,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.0.7/sweetalert2.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href= "{{ asset ('image/brw.png')}}" type="image/x-icon"/>
+
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
 </head>
 <body>
     <div id="app">
@@ -103,17 +104,9 @@
     }, 3000);
 </script>
 
-<script type="text/javascript">
-  $(function(){
-    $(document).on('click', '#delete', function(e){
-      e.preventDefault();
-      var link = $(this).attr("href");
-    })
-  });
- </script>
-    
 
-<script type="text/javascript">
+
+<script>
 
     $('.show-alert-delete-box').click(function(event){
 
@@ -126,21 +119,11 @@
         swal({
 
             title: "Are you sure you want to delete this record?",
-
-            text: "If you delete this, it will be gone forever.",
-
             icon: "warning",
-
-            type: "warning",
-
             buttons: ["No","Yes!"],
-
             confirmButtonColor: '#3085d6',
-
             cancelButtonColor: '#d33',
-
             confirmButtonText: 'Yes, delete it!'
-
         }).then((willDelete) => {
 
             if (willDelete) {
@@ -154,5 +137,6 @@
     });
 
 </script>
+
 </body>
 </html>

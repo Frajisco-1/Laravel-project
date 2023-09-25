@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\LaporanController;
+use illuminate\Support\Facades\Mail;
+use App\Mail\SendEmail;
 
 
 
@@ -26,6 +28,7 @@ use App\Http\Controllers\LaporanController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Auth::routes(['register'=> false]);
 
@@ -45,3 +48,4 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('profile', [UserController::class, 'profileUpdate'])->name('users.profileUpdate');
     Route::get('laporans', [LaporanController::class, 'index'])->name('laporans.index');
 });
+

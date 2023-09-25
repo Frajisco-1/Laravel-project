@@ -44,8 +44,9 @@
        <a class="btn btn-warning btn-sm" href="{{ route('users.show',$user->id) }}"><i class="fa-regular fa-eye"></i> Show</a>
        <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-        {{ Form::button('<i class="fa-regular fa-trash-can"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm']) }}
+        {{ Form::button('<i class="fa-regular fa-trash-can"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-flat show-alert-delete-box btn-sm']) }}
         {!! Form::close() !!}
+        
     </td>
   </tr>
  @endforeach

@@ -6,11 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\LaporanController;
-use illuminate\Support\Facades\Mail;
-use App\Mail\SendEmail;
+
 
 
 

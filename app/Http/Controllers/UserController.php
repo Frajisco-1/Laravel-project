@@ -174,7 +174,7 @@ class UserController extends Controller
             'name' => ['required'],
             'email' => ['required', 'email', 'unique:users,email,' . $user->id],
             'password' => ['nullable', 'same:confirm-password'],
-            'photo' => ['nullable', 'image', 'max:2048'],
+            'photo' => ['nullable', 'image', 'max:150'],
         ]);
 
         $attributes = $request->only(['name', 'email']);

@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\LaporanController;
@@ -38,12 +37,11 @@ Route::group(['middleware' => ['auth']], function() {
         
     Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('users', [UserController::class, 'index'])->name('users.index');
-        Route::resource('roles', RoleController::class);
+    Route::get('laporans', [LaporanController::class, 'index'])->name('laporans.index');
     });
-    
 
     Route::get('profile', [UserController::class, 'profile'])->name('users.profile');
     Route::post('profile', [UserController::class, 'profileUpdate'])->name('users.profileUpdate');
-    Route::get('laporans', [LaporanController::class, 'index'])->name('laporans.index');
+    
 });
 
